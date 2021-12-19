@@ -93,6 +93,8 @@ End Sub
 ## 実行サンプル Sample Image
 ![](05_Image/Image01.jpg)  
 ![](05_Image/Image02.jpg)  
+VBAでの実行例  
+![](05_Image/ColorDropDownListCallFromVBA.gif)  
 &nbsp;
 ## Link
 [【C++】色を選択できるコンボボックス（ドロップダウンリスト）を作ってみた（MFC 未使用）](https://z1000s.hatenablog.com/entry/2021/01/28/233951)

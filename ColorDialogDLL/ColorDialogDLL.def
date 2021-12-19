@@ -1,0 +1,4 @@
+LIBRARY ColorDialogDLL
+
+EXPORTS
+	showColorComboDialog

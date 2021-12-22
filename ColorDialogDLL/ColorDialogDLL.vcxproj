@@ -179,6 +179,10 @@
     <Manifest>
       <EnableDpiAwareness>true</EnableDpiAwareness>
     </Manifest>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" "$(SolutionDir)02_Binary\"
+copy "$(OutDir)$(TargetName).lib" "$(SolutionDir)02_Binary\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ColorDialogDLL.h" />

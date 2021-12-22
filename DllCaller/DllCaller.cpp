@@ -53,10 +53,10 @@ int main()
 		return 0;
 	}
 
-	pFuncDlg pfDlg = (pFuncDlg)GetProcAddress(hModule, "showColorCombeDialog");
+	pFuncDlg pfDlg = (pFuncDlg)GetProcAddress(hModule, "showColorComboDialog");
 	if (!pfDlg)
 	{
-		wcout << L"LoadLibrary fail.\n";
+		wcout << L"GetProcAddress fail.\n";
 		FreeLibrary(hModule);
 		return 0;
 	}
@@ -111,7 +111,7 @@ int main()
 
 	FreeLibrary(hModule);
 
-	wchar_t wsColor[16];
+	wchar_t wsColor[32];
 	if (!(cr & 0x80000000))
 		wsprintfW(wsColor, L"%02X%02X%02X\n", GetRValue(cr), GetGValue(cr), GetBValue(cr));
 	else if (cr == -1)
@@ -120,4 +120,6 @@ int main()
 		wsprintfW(wsColor, L"%s", L"An error has occurred.");
 
 	wcout << wsColor;
+
+	return 0;
 }

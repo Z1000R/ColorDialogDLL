@@ -5,6 +5,7 @@
 - [DLLのダイアログ表示メソッドをVBAから呼び出し、ダイアログを表示させる](#dllのダイアログ表示メソッドをvbaから呼び出しダイアログを表示させる)
   - [概要 Overview](#概要-overview)
   - [詳細 Details](#詳細-details)
+  - [関数](#関数)
   - [呼び出し例](#呼び出し例)
     - [C++](#c)
     - [VBA](#vba)
@@ -22,6 +23,29 @@ DLL内のリソースに埋め込まれたダイアログを表示するメソ�
 &nbsp;
 ## 詳細 Details
 以前、[【C++】色を選択できるコンボボックス（ドロップダウンリスト）を作ってみた（MFC 未使用）](https://z1000s.hatenablog.com/entry/2021/01/28/233951)で、作成したダイアログを、DLL内に移植し、VBAから呼び出せるようにしたものです。    
+&nbsp;
+
+## 関数
+~~~C++
+#define COLORDIALOGDLL_API __declspec(dllexport) 
+
+extern "C"
+{
+	COLORDIALOGDLL_API COLORREF WINAPI showColorComboDialog(  
+      const VARIANT& vTitle,  
+      const VARIANT& vMessage, 
+      LPSAFEARRAY* ppsa, 
+      const LONG lDefaultIndex);
+}
+~~~
+  
+| 引数 | In/Out | 内容 | 備考 |
+|:--|:--|:--|:--|
+|vTitle|In|ダイアログのタイトル||
+|vMessage|In|ダイアログのメッセージ||
+|ppsa|In|表示する色データの配列<br />(SAFEARRAY)を指すポインタのポインタ||
+|lDefaultIndex|In|表示時に選択する項目のインデックス|-1 指定で、表示時未選択|
+
 &nbsp;
 ## 呼び出し例
 ### C++

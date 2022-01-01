@@ -111,8 +111,9 @@ End Sub
 - Visual C++  
 - Microsoftr 365 Solo 64bit  
 &nbsp;
-## ライセンス License
+## ライセンスと著作権 License and Copyright
 - MIT License  
+- (c) 2021 Z1000R
 &nbsp;
 ## 実行サンプル Sample Image
 ![](05_Image/Image01.jpg)  
